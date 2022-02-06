@@ -16,7 +16,10 @@
 
 <div>
 <label>感想：<br>
-<textarea cols="40" rows="5" id="reviewTextarea"></textarea>
+<textarea cols="40" rows="5" id="reviewTextarea">dataLayer.push({
+  event:'test',
+  param:'otameshi'
+});</textarea>
 </label>
 </div>
 
@@ -27,8 +30,7 @@ function inputChange(event){
   msg.innerText = reviewTextarea.value;
 
   var newElement = document.createElement("script"); // script要素作成
-  console.log(msg);
-  console.log(msg.innerText)
+
   var newContent = document.createTextNode(msg.innerText); // テキストノードを作成
   newElement.appendChild(newContent); // テキストノードを追加
   newElement.setAttribute("id","append"); // idを設定
