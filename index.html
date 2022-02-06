@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-184610712-2"></script>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>解析環境構築　テストサイト</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ここにサイト説明を入れます">
+<meta name="keywords" content="キーワード１,キーワード２,キーワード３,キーワード４,キーワード５">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/fixmenu_pagetop.css">
+<script>
+    window.dataLayer = window.dataLayer ||[];
+    dataLayer.push({
+      'age':23
+    });
+    // ユーザープロパティ設定用 dataLayer
+    dataLayer.push({
+      'event':'set_userproperty',
+      'member_id':'01234567890123456789',
+      'member_rank':'RNK00001',
+      'age':23,
+      'sex':'1',
+      'sns':'',
+      'contact_lens_member':'0',
+      'used_store':null,
+      'postal_code':'null'
+    });
+</script>
+<!-- <script id="ecommerce">
+    var dataLayer = dataLayer || []; dataLayer.push({
+  __product_category: "ファブリックソファ",
+  __product_id: ["1141031-1140061s"],
+  __product_sku: ["1141033-1140063"],
+  __product_name: ["3人用布張りソファ(キャッツ3 GY)"],
+  __gtm__event: "prodDetail",
+  __ga__contentG_L: "ソファ",
+  __ga__contentG_M: "ファブリックソファ",
+  __ga__contentG_S: "布張りソファ(キャッツ3)",
+  __ga__contentG_H1: "商品詳細",
+  __ga__contentG_H2: "商品詳細",
+  ecommerce: {
+    detail: {
+      products: {name: "3人用布張りソファ(キャッツ3 GY)", id: "1141033-1140063", category: "ファブリックソファ"}
+    }
+  },
+  event: "prod_detail"
+})
+</script> -->
+<script type="text/javascript" src="js/openclose.js"></script>
+<script type="text/javascript" src="js/fixmenu_pagetop.js"></script>
+    
+
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(function(){
+$('a[href^="#"]').click(function() {
+var speed = 800;
+var href= $(this).attr("href");
+var target = $(href == "#" || href == "" ? 'html' : href);
+var position = target.offset().top;
+$('body,html').animate({scrollTop:position}, speed, 'swing');
+return false;
+});
+});
+</script>
+</head>
+
+<body>
+    <script>
+function productClick() {
+dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+dataLayer.push({
+  event: "purchase",
+  ecommerce: {
+      transaction_id: "個別エントリー_1004",
+      value: "1000",
+      currency: "JPY",
+      items: [{
+        item_name: "Triblend Android T-Shirt",
+        item_id: "12345",
+        price: "1000",
+        item_category: "セミナーエントリー",
+        item_category2: "説明会",
+        quantity: 1
+      }]
+  }
+});
+}
+    </script>
+<script>
+//今日の日付データを変数hidukeに格納
+var hiduke=new Date(); 
+var date = new Date().getTime();
+var timest = new Date(date).toString();
+//年・月・日・曜日を取得する
+var year = hiduke.getFullYear();
+var month = hiduke.getMonth()+1;
+var day = hiduke.getDate();
+var time = timest.split(' ')[4]
+var kyou = year+"_"+month+"_"+day;
+	function purchaseEvent() {
+        dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+        dataLayer.push({
+            event: "purchase",
+            ecommerce: {
+                transaction_id: "test_"+kyou+"_"+time,
+                value: 1000,
+                currency: "JPY",
+                entry_type:"個別エントリー",
+                items: [{
+                    item_name: "Tシャツ",
+                    item_id: "12345",
+                    price: "1000",
+                    item_category: "トップス",
+                    quantity: 1
+                 }]
+            }
+        });
+	};
+</script>
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPCCXMC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div id="container">
+
+<div id="mainimg">メインイメージ</div>
+
+<header>
+
+<h1 id="logo"><a href="index.html" data-gtm="top"><img src="images/logo.png" alt="Sample Site"></a></h1>
+<!--PC用（801px以上端末）メニュー-->
+<nav id="menubar">
+<ul>
+<li id="menu1"><a href="index.html?dv=25%2C26%2C27%2C28%2C29%2C30%2C41&ht=1&oy=2&ds=22&wk=2&hs=1&wc=119&os=1&bn=2" data-gtm="about"><img src="images/menu_about.png" alt="当サイトについて"></a></li>
+<li id="menu2"><a href="https://mdrtest.page.link/H3Ed" data-gtm="garary"><img src="images/menu_gallery.png" data-gtm-param="camp cid123" alt="ギャラリー"></a></li>
+<li id="menu3"><a href="http://dpt.appirits.com/ga/arai/custom_elem.html" data-gtm="link"><img src="images/menu_link.png" alt="リンク"></a></li>
+<li id="menu4"><a href="http://gatest29.html.xdomain.jp/cookiebottest.html" data-gtm="instagram"><img src="images/menu_instagram.png" alt="インスタグラム"></a></li>
+</ul>
+</nav>
+
+</header>
+
+<div class="contents bg1"><!--contentsブロック開始＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝-->
+<section id="new">
+
+<h2>What' New<span>お知らせ</span></h2>
+<dl>
+<dt>2018/05/21</dt>
+<dd>tp_simple15公開。<span class="newicon">NEW</span></dd>
+<dt>20XX/00/00</dt>
+<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+<dt>20XX/00/00</dt>
+<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+<dt>20XX/00/00</dt>
+<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+<dt>20XX/00/00</dt>
+<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+<dt>20XX/00/00</dt>
+<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+<dt>20XX/00/00</dt>
+<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+</dl>
+<p class="r">&raquo;&nbsp;<a href="#">過去ログ</a></p>
+
+</section>
+
+</div>
+<!--/contents-->
+
+<div class="contents bg2" id="about"><!--contentsブロック開始＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝-->
+
+<section>
+<input type="button" name="purchase" value="購入テスト" class="btn" data-gtm="kounyubutton" onclick="purchaseEvent()">
+<button class="g-btn" data-gtm="tadanobutton" onclick="dataLayer.push({event:'hannyo',onigiri:'tabehodai',yappari:'oishi'})">ただのボタン</button>
+<h2>About<span>当テンプレートについて</span></h2>
+
+<h3>当テンプレートはhtml5+CSS3(レスポンシブWEBデザイン)です</h3>
+<p>当テンプレートは、パソコン、スマホ、タブレットでhtml共通のレスポンシブWEBデザインになっております。<br>
+古いブラウザ（※特にIE8以下）で閲覧した場合にCSSの一部が適用されない（角を丸くする加工、グラデーション、アニメーションなどの加工等）のでご注意下さい。</p>
+
+<h3>各デバイスごとのレイアウトチェックは</h3>
+<p>最終的なチェックは実際のタブレットやスマホで行うのがおすすめですが、臨時チェックは最新のブラウザ(IEならIE10以降)で行う事もできます。ブラウザの幅を狭くしていくと、各端末サイズに合わせたレイアウトになります。</p>
+
+<h3>各デバイス用のスタイル変更は</h3>
+<p>cssフォルダのstyle.cssファイルで行って下さい。詳しい説明も入っています。<br>
+前半はパソコン環境を含めた全端末の共通設定になります。中盤以降、各端末向けのスタイルが追加設定されています。<br>
+media=&quot; (〜)&quot;の「〜」部分でcssを切り替えるディスプレイのサイズを設定しています。ここは必要に応じて変更も可能です。</p>
+
+<h3>※冒頭のイラストは<a href="http://sozai.komalu.com/" target="_blank">コムマール(Komalu)</a>さんの著作物です</h3>
+<p><a href="http://template-party.com/">Template Party</a>のテンプレート内でご利用頂く場合のみ、イラストの再利用が許可されています。<br>
+※イラスト横の小さなサイン(Komalu)はコムマールさんの著作表示箇所なので消さないで下さい。<br>
+「Komalu」のサインを消したい場合や、弊社テンプレート以外での使用については<a href="http://sozai.komalu.com/" target="_blank">コムマール</a>さんのサイトの利用規約をご確認下さい。</p>
+
+</section>
+
+<section>
+
+<h2>当テンプレートの使い方</h2>
+
+<h3>titleタグ、copyright、metaタグ、他の設定</h3>
+<p>titleタグの設定はとても重要です。念入りにワードを選んで適切に入力しましょう。<br>
+まず、htmlソースが見れる状態にして、<br>
+<span class="look">&lt;title&gt;個人サイト向け 無料ホームページテンプレート tp_simple15&lt;/title&gt;</span><br>
+を編集しましょう。<br>
+あなたのホームページ名が「Sample Site」だとすれば、<br>
+<span class="look">&lt;title&gt;Sample Site&lt;/title&gt;</span><br>
+とすればＯＫです。SEO対策もするなら冒頭に重要なワードを入れておきましょう。</p>
+<p>copyrightを変更しましょう。<br>
+続いてhtmlの下の方にある、<br>
+<span class="look">Copyright&copy; Sample Site All Rights Reserved.</span><br>
+の部分もあなたのサイト名に変更します。</p>
+<p>metaタグを変更しましょう。<br>
+htmlソースが見える状態にしてmetaタグを変更しましょう。</p>
+<p>ソースの上の方に、<br>
+<span class="look">content=&quot;ここにサイト説明を入れます&quot;</span><br>
+という部分がありますので、テキストをサイトの説明文に入れ替えます。検索結果の文面に使われる場合もありますので、見た人が来訪したくなるような説明文を簡潔に書きましょう。</p>
+<p>続いて、その下の行の<br>
+<span class="look">content=&quot;キーワード１,キーワード２,〜〜〜&quot;</span><br>
+も設定します。ここはサイトに関係のあるキーワードを入れる箇所です。10個前後ぐらいあれば充分です。キーワード間はカンマ「,」で区切ります。</p>
+<p>h1ロゴのaltタグも変更しましょう。<br>
+  html側に、<br>
+<span class="look">alt=&quot;Sample Site&quot;</span><br>
+となっている箇所があるので、この部分もあなたのサイト名に変更しましょう。</p>
+
+<h3>ロゴ・メニュー画像について</h3>
+<p>文字なしの土台画像がbaseフォルダに入っていますのでそれにサイト名をのせてimagesフォルダに上書きして下さい。<br>
+土台画像は正方形になっていますが、cssで円形にしています。つまり、cssの円形の設定を外せば本来の正方形に戻ります。<br>
+円の大きさや配置場所、アニメーション設定などもcssフォルダのstyle.cssで変更可能です。詳しい説明も入っているので変更したい場合は読んでみて下さい。</p>
+
+<h3>リンクは全てページ内へのリンクになっています。</h3>
+<p>例えば、左メニューの「About」のリンク先には「#about」が指定されています。これはhtml内の「id=&quot;about&quot;」という箇所へリンクする意味です。<br>
+「id=&quot;about&quot;」は「About（当テンプレートについて）」の見出しの上にあるdivタグに入っています。<br>
+分かりやすいように各ブロックごとに横線入りのコメントがついていますので目安にして下さい。<br>
+インスタ用のアイコンのリンク先は設定していません。必要に応じて外部へリンクなどさせて下さい。</p>
+
+<h3>リンク先へ移動する際のスムーズスクロールについて</h3>
+<p>リンクの際にスムーズに移動するようにjQueryを使用しています。jQueryのファイルはhead冒頭に直接読み込んでいますので設定は特に不要です。<br>
+移動速度を調整したい場合は、htmlの上の方にある、<br>
+var speed = 800;<br>
+の800の数値を変更してみて下さい。解説サイトも多くあるのでGoogle検索などかけてみてもいいと思います。</p>
+
+<h3>各ブロックごとの色分け設定は</h3>
+<p>html側のcontentsタグの横に入っている「bg1」や「bg2」部分が色分けのスタイルです。bg本体のスタイル指定はcssフォルダのstyle.cssにあります。</p>
+
+<h3>スクロール中に出る「↑」アイコンについて</h3>
+<p>fixmenu_pagetop.jsで動作の制御を、fixmenu_pagetop.cssでボタンデザインを設定しています。<br>
+ボタンの出現ポイントは、現在350pxの場所になっています。変更したい場合はfixmenu_pagetop.jsの34行目あたりにある、<br>
+offsettop = 350;<br>
+の350を変更して下さい。</p>
+
+</section>
+
+</div>
+<!--/contents-->
+
+<div class="contents bg3" id="gallery"><!--contentsブロック開始＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝-->
+
+<section>
+
+<h2>Gallery</h2>
+
+<div class="list" >
+<img src="images/sample1.jpg" data-gtm-param="JAN:0123456789" alt="" id=impressions_test1>
+</div>
+
+<div class="list">
+<img src="images/sample2.jpg" alt="" onclick="dataLayer.push({'event':'event_tracking','eventName': 'tap_navi','eventParams': '{\"firebase_screen\": \"reg_conf_terms\"}'});">
+</div>
+
+<div class="list">
+<img src="images/sample3.jpg" alt="">
+</div>
+
+<div class="list">
+<img src="images/sample4.jpg" alt="">
+</div>
+
+<div class="list">
+  <div class="media">
+    <a data-gtm-param="camp:cid123" href="http://gatest29.html.xdomain.jp/newpage.html"><img data-gtm-param="camp cid123" src="images/sample5.jpg" alt=""></a>
+  </div>
+    <div class="item-text">
+      <h3><a data-gtm-param="campaign_info:012345678 screen_name:JAN0120" href="http://gatest29.html.xdomain.jp/newpage.html">newpage</a></h3>
+    </div>
+</div>
+
+<div class="list">
+<img src="images/sample6.jpg" alt="">
+</div>
+
+<div class="list">
+<img src="images/sample7.jpg" alt="">
+</div>
+
+<div class="list">
+<img src="images/sample8.jpg" alt="">
+</div>
+
+<div class="list">
+<img src="images/sample1.jpg" alt="">
+</div>
+
+<div class="list">
+<img src="images/sample2.jpg" alt="">
+</div>
+
+<div class="list">
+<img src="images/sample3.jpg" alt="">
+</div>
+
+<div class="list">
+<img src="images/sample4.jpg" alt="">
+</div>
+
+<div class="list">
+<img src="images/sample5.jpg" alt="">
+</div>
+
+<div class="list">
+<img src="images/sample6.jpg" alt="" onclick="dataLayer.push({'event':'evTracking','evCategory':'testimp','evLabel':'under'})">
+</div>
+
+<div class="list">
+<img src="images/sample7.jpg" alt="">
+</div>
+
+<div class="list">
+<img src="images/sample8.jpg" alt="">
+</div>
+
+</section>
+
+</div>
+<!--/contents-->
+
+<div class="contents bg4 gtm-impression" data-gtm="gname" id="link"><!--contentsブロック開始＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝-->
+
+<section>
+
+<h2>リンク</h2>
+
+<table class="ta1">
+<tr>
+<th colspan="2" class="tamidashi">見出しが必要であればここを使います</th>
+</tr>
+<tr>
+<th><a href="http://dpt.appirits.com/ga/arai/custom_elem.html">カスタム指標テスト</a></th>
+<td>カスタム指標計測テスト用ページです。ページ表示で2と計測されます。</td>
+</tr>
+<tr>
+<th><a href="hoge-scheme://hoge-host?id=hogehogehoge&utm_source=testutm&utm_medium=homepage&utm_campaign=param_test">アプリ起動</a></th>
+<td>アプリ起動用リンクです　※エミュレータのみで起動可能</td>
+</tr>
+<tr>
+<th><a href="http://gatest29.html.xdomain.jp/newpage.html">newpage</a></th>
+<td>新しく作ったページ。ドンキテスト用</td>
+</tr>
+<tr>
+<th><a href="/shop/g/gs003/" onclick="productClick() { dataLayer.push({ 'event': 'productClick', 'evCategory': '商品クリック', 'evAction': 's003', 'ecommerce': { 'click': { 'actionField': { 'list': 'b-order_globalnavi' }, 'products': [{ 'id': 's003', 'category': 'c10' }] } } });}">PHONE APPLI PEOPLE</a>	</th>
+<td>ここに説明など入れて下さい。サンプルテキスト。</td>
+</tr>
+<tr>
+<th><a href="#" onclick="uacheckbtn();">uacheck</a></th>
+<td>UserAgentによってdataLayer送信を出し分ける確認用のリンク</td>
+</tr>
+<tr>
+<th><a href="#">サイト名</a></th>
+<td>ここに説明など入れて下さい。サンプルテキスト。</td>
+</tr>
+<tr>
+<th><a href="#">サイト名</a></th>
+<td>ここに説明など入れて下さい。サンプルテキスト。</td>
+</tr>
+<tr>
+<th><a href="#">サイト名</a></th>
+<td>ここに説明など入れて下さい。サンプルテキスト。</td>
+</tr>
+</table>
+
+<table class="ta1">
+<tr>
+<th colspan="2" class="tamidashi">見出しが必要であればここを使います</th>
+</tr>
+<tr>
+<th><a href="#">サイト名</a></th>
+<td>ここに説明など入れて下さい。サンプルテキスト。</td>
+</tr>
+<tr>
+<th><a href="#">サイト名</a></th>
+<td>ここに説明など入れて下さい。サンプルテキスト。</td>
+</tr>
+<tr>
+<th><a href="#">サイト名</a></th>
+<td>ここに説明など入れて下さい。サンプルテキスト。</td>
+</tr>
+<tr>
+<th><a href="#">サイト名</a></th>
+<td>ここに説明など入れて下さい。サンプルテキスト。</td>
+</tr>
+<tr>
+<th><a href="#">サイト名</a></th>
+<td>ここに説明など入れて下さい。サンプルテキスト。</td>
+</tr>
+<tr>
+<th><a href="#">サイト名</a></th>
+<td>ここに説明など入れて下さい。サンプルテキスト。</td>
+</tr>
+<tr>
+<th><a href="#">サイト名</a></th>
+<td>ここに説明など入れて下さい。サンプルテキスト。</td>
+</tr>
+<tr>
+<th><a href="#">サイト名</a></th>
+<td>ここに説明など入れて下さい。サンプルテキスト。</td>
+</tr>
+</table>
+
+</section>
+
+</div>
+<!--/contents-->
+
+<footer>
+<small>Copyright&copy; <a href="index.html">Sample Site</a> All Rights Reserved.</small>
+<span class="pr"><a href="http://template-party.com/" target="_blank">《Web Design:Template-Party》</a></span>
+</footer>
+
+<p class="nav-fix-pos-pagetop"><a href="#">↑</a></p>
+
+</div>
+<!--/container-->
+
+</body>
+</html>
