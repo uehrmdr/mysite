@@ -1,6 +1,6 @@
 /*
- * ƒuƒƒbƒNŠJ•Âˆ—
- * 2015/12/21 ƒ{ƒ^ƒ“‰æ‘œ‚Ì”ñ•\¦ˆ—‚ğs‚í‚È‚¢
+ * ãƒ–ãƒ­ãƒƒã‚¯é–‹é–‰å‡¦ç†
+ * 2015/12/21 ãƒœã‚¿ãƒ³ç”»åƒã®éè¡¨ç¤ºå‡¦ç†ã‚’è¡Œã‚ãªã„
  */
 /*
  * Return the classList property of e, if it has one.
@@ -12,11 +12,16 @@
  * DOMTokenList is not array-like, but has a toArray() method that returns
  * a true-array snapshot of the element's class names.
  */
+
+//GTM
 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MPCCXMC');
+})(window,document,'script','dataLayer','GTM-586XP58');
+//GTM
+
+
 function classList(e) {
     if (e.classList) return e.classList;   // Return e.classList if it exists
     else return new CSSClassList(e);       // Otherwise try to fake it
