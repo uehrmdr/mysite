@@ -12,9 +12,35 @@
 <link rel="stylesheet" href="css/fixmenu_pagetop.css">
 <script>
     window.dataLayer = window.dataLayer ||[];
-    dataLayer.push({
-      'age':23
-    });
+    //今日の日付データを変数hidukeに格納
+    var hiduke=new Date(); 
+    var date = new Date().getTime();
+    var timest = new Date(date).toString();
+    //年・月・日・曜日を取得する
+    var year = hiduke.getFullYear();
+    var month = hiduke.getMonth()+1;
+    var day = hiduke.getDate();
+    var time = timest.split(' ')[4]
+    var kyou = year+"_"+month+"_"+day;
+        function purchaseEvent() {
+            dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+            dataLayer.push({
+                event: "purchase",
+                ecommerce: {
+                    transaction_id: "test_"+kyou+"_"+time,
+                    value: 1000,
+                    currency: "JPY",
+                    entry_type:"個別エントリー",
+                    items: [{
+                        item_name: "Tシャツ",
+                        item_id: "12345",
+                        price: "1000",
+                        item_category: "トップス",
+                        quantity: 1
+                     }]
+                }
+            });
+        };
     // ユーザープロパティ設定用 dataLayer
     dataLayer.push({
       'event':'set_userproperty',
@@ -28,26 +54,9 @@
       'postal_code':'null'
     });
 </script>
-<!-- <script id="ecommerce">
-    var dataLayer = dataLayer || []; dataLayer.push({
-  __product_category: "ファブリックソファ",
-  __product_id: ["1141031-1140061s"],
-  __product_sku: ["1141033-1140063"],
-  __product_name: ["3人用布張りソファ(キャッツ3 GY)"],
-  __gtm__event: "prodDetail",
-  __ga__contentG_L: "ソファ",
-  __ga__contentG_M: "ファブリックソファ",
-  __ga__contentG_S: "布張りソファ(キャッツ3)",
-  __ga__contentG_H1: "商品詳細",
-  __ga__contentG_H2: "商品詳細",
-  ecommerce: {
-    detail: {
-      products: {name: "3人用布張りソファ(キャッツ3 GY)", id: "1141033-1140063", category: "ファブリックソファ"}
-    }
-  },
-  event: "prod_detail"
-})
-</script> -->
+<script>
+
+    </script>
 <script type="text/javascript" src="js/openclose.js"></script>
 <script type="text/javascript" src="js/fixmenu_pagetop.js"></script>
     
@@ -72,58 +81,7 @@ return false;
 </head>
 
 <body>
-    <script>
-function productClick() {
-dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
-dataLayer.push({
-  event: "purchase",
-  ecommerce: {
-      transaction_id: "個別エントリー_1004",
-      value: "1000",
-      currency: "JPY",
-      items: [{
-        item_name: "Triblend Android T-Shirt",
-        item_id: "12345",
-        price: "1000",
-        item_category: "セミナーエントリー",
-        item_category2: "説明会",
-        quantity: 1
-      }]
-  }
-});
-}
-    </script>
-<script>
-//今日の日付データを変数hidukeに格納
-var hiduke=new Date(); 
-var date = new Date().getTime();
-var timest = new Date(date).toString();
-//年・月・日・曜日を取得する
-var year = hiduke.getFullYear();
-var month = hiduke.getMonth()+1;
-var day = hiduke.getDate();
-var time = timest.split(' ')[4]
-var kyou = year+"_"+month+"_"+day;
-	function purchaseEvent() {
-        dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
-        dataLayer.push({
-            event: "purchase",
-            ecommerce: {
-                transaction_id: "test_"+kyou+"_"+time,
-                value: 1000,
-                currency: "JPY",
-                entry_type:"個別エントリー",
-                items: [{
-                    item_name: "Tシャツ",
-                    item_id: "12345",
-                    price: "1000",
-                    item_category: "トップス",
-                    quantity: 1
-                 }]
-            }
-        });
-	};
-</script>
+
 
 <div id="container">
 
@@ -380,7 +338,7 @@ offsettop = 350;<br>
 <td>ここに説明など入れて下さい。サンプルテキスト。</td>
 </tr>
 </table>
-
+<script type="text/javascript" src="js/userid.js"></script>
 <table class="ta1">
 <tr>
 <th colspan="2" class="tamidashi">見出しが必要であればここを使います</th>
